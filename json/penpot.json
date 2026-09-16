@@ -1,0 +1,60 @@
+{
+    "name": "Penpot",
+    "slug": "penpot",
+    "categories": [
+        11
+    ],
+    "date_created": "2026-09-16",
+    "type": "ct",
+    "updateable": true,
+    "privileged": false,
+    "architectures": [
+        "amd64"
+    ],
+    "interface_port": 80,
+    "documentation": "https://help.penpot.app/technical-guide/",
+    "website": "https://penpot.app/",
+    "repository": "https://github.com/penpot/penpot",
+    "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/penpot.webp",
+    "description": "Open-source design and prototyping platform. Built natively from source, no Docker.",
+    "install_methods": [
+        {
+            "type": "default",
+            "script": "ct/penpot.sh",
+            "config_path": "/opt/penpot/penpot.env",
+            "resources": {
+                "cpu": 4,
+                "ram": 8192,
+                "hdd": 40,
+                "os": "Debian",
+                "version": "13"
+            }
+        }
+    ],
+    "default_credentials": {
+        "username": null,
+        "password": null
+    },
+    "notes": [
+        {
+            "text": "Install and updates compile Penpot from source (Clojure, Rust/WASM, Node). Expect 30-90 minutes.",
+            "type": "warning"
+        },
+        {
+            "text": "Register the first account in the web UI, then remove enable-registration from /opt/penpot/penpot.env and /opt/penpot/config.js.",
+            "type": "info"
+        },
+        {
+            "text": "Behind an HTTPS reverse proxy: set PENPOT_PUBLIC_URI and remove disable-secure-session-cookies.",
+            "type": "info"
+        },
+        {
+            "text": "Database credentials: cat ~/penpot.creds",
+            "type": "info"
+        },
+        {
+            "text": "MCP: create an MCP key in Settings > Integrations, then point your AI client at http://<IP>/mcp/stream?userToken=<KEY>. Keep the Penpot MCP plugin open in the design file.",
+            "type": "info"
+        }
+    ]
+}
