@@ -87,6 +87,20 @@ Only Nginx listens on the LAN. Everything else is bound to localhost.
 
 ---
 
+## Dependencies
+
+Installed via `apt` during setup:
+
+- `build-essential`, `git`, `rsync`, `jq`, `openssl`, `sudo`
+- `python3`, `python3-tabulate`, `fontforge`, `woff2`, `imagemagick`
+- `fontconfig`, `libfreetype6`
+- `nginx`, `valkey-server`
+- PostgreSQL 16 (via the community-scripts `setup_postgresql` helper)
+
+Plus the build toolchain listed below.
+
+---
+
 ## Updating
 
 Run the same command you used to install, and choose **Update** from the menu. The
